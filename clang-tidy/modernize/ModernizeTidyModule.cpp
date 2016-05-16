@@ -12,6 +12,7 @@
 #include "../ClangTidyModuleRegistry.h"
 #include "AvoidBindCheck.h"
 #include "DeprecatedHeadersCheck.h"
+#include "ExplicitOperatorBoolCheck.h"
 #include "LoopConvertCheck.h"
 #include "MakeSharedCheck.h"
 #include "MakeUniqueCheck.h"
@@ -39,6 +40,8 @@ public:
         "modernize-avoid-bind");
     CheckFactories.registerCheck<DeprecatedHeadersCheck>(
         "modernize-deprecated-headers");
+    CheckFactories.registerCheck<ExplicitOperatorBoolCheck>(
+        "modernize-explicit-operator-bool");
     CheckFactories.registerCheck<LoopConvertCheck>("modernize-loop-convert");
     CheckFactories.registerCheck<MakeSharedCheck>("modernize-make-shared");
     CheckFactories.registerCheck<MakeUniqueCheck>("modernize-make-unique");

@@ -190,6 +190,11 @@ identified.  The improvements since the 3.8 release include:
 
   Replaces C standard library headers with their C++ alternatives.
 
+- New `modernize-explicit-operator-bool
+  <http://clang.llvm.org/extra/clang-tidy/checks/modernize-explicit-operator-bool.html>`_ check
+
+  Adds the ``explicit`` keyword to ``operator bool`` overloads.
+
 - New `modernize-make-shared
   <http://clang.llvm.org/extra/clang-tidy/checks/modernize-make-shared.html>`_ check
 
