@@ -16,6 +16,7 @@
 #include "LoopConvertCheck.h"
 #include "MakeSharedCheck.h"
 #include "MakeUniqueCheck.h"
+#include "OperatorVoidPointerCheck.h"
 #include "PassByValueCheck.h"
 #include "RawStringLiteralCheck.h"
 #include "RedundantVoidArgCheck.h"
@@ -45,6 +46,8 @@ public:
     CheckFactories.registerCheck<LoopConvertCheck>("modernize-loop-convert");
     CheckFactories.registerCheck<MakeSharedCheck>("modernize-make-shared");
     CheckFactories.registerCheck<MakeUniqueCheck>("modernize-make-unique");
+    CheckFactories.registerCheck<OperatorVoidPointerCheck>(
+        "modernize-operator-void-pointer");
     CheckFactories.registerCheck<PassByValueCheck>("modernize-pass-by-value");
     CheckFactories.registerCheck<RawStringLiteralCheck>(
         "modernize-raw-string-literal");

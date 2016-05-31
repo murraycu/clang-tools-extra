@@ -10,6 +10,7 @@ add_clang_library(clangTidyModernizeModule
   MakeSharedCheck.cpp
   MakeUniqueCheck.cpp
   ModernizeTidyModule.cpp
+  OperatorVoidPointerCheck.cpp
   PassByValueCheck.cpp
   RawStringLiteralCheck.cpp
   RedundantVoidArgCheck.cpp
