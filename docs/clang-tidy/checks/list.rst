@@ -107,7 +107,6 @@ Clang-Tidy Checks
    modernize-use-default
    modernize-use-nullptr
    modernize-use-override
-   modernize-operator-void-pointer
    performance-faster-string-find
    performance-for-range-copy
    performance-implicit-cast-in-loop

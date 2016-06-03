@@ -1,9 +1,9 @@
-// RUN: %check_clang_tidy %s modernize-operator-void-pointer %t -- -- -std=c++11
+// RUN: %check_clang_tidy %s modernize-explicit-operator-bool %t -- -- -std=c++11
 
 // This should trigger the check:
 class SomethingBad {
   operator const void *() const {
-    // CHECK-MESSAGES: :[[@LINE-1]]:3: warning: implicit operator void* declaration should probably be explicit operator bool [modernize-operator-void-pointer]
+    // CHECK-MESSAGES: :[[@LINE-1]]:3: warning: implicit operator const void* declaration should probably be explicit operator bool [modernize-explicit-operator-bool]
     return reinterpret_cast<void *>(something != 0);
   }
 

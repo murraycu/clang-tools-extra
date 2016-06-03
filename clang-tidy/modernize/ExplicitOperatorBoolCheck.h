@@ -18,15 +18,20 @@ namespace modernize {
 
 /// This check finds implicit operator bool overloads and inserts the explicit
 /// keyword, which is available since C++11.
+/// It also finds implicit operator const void* overloads, which should often be
+/// explicit operator bool overloads.
 ///
 /// For the user-facing documentation see:
 /// http://clang.llvm.org/extra/clang-tidy/checks/modernize-explicit-operator-bool.html
 class ExplicitOperatorBoolCheck : public ClangTidyCheck {
 public:
-  ExplicitOperatorBoolCheck(StringRef Name, ClangTidyContext *Context)
-      : ClangTidyCheck(Name, Context) {}
+  ExplicitOperatorBoolCheck(StringRef Name, ClangTidyContext *Context);
+  void storeOptions(ClangTidyOptions::OptionMap &Opt) override;
   void registerMatchers(ast_matchers::MatchFinder *Finder) override;
   void check(const ast_matchers::MatchFinder::MatchResult &Result) override;
+
+private:
+  const bool WarnOnOperatorVoidPointer;
 };
 
 } // namespace modernize
